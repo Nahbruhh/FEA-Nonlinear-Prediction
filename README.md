@@ -43,23 +43,23 @@ Moderate to High. Requires domain knowledge and careful data handling.
 Supervised learning using regression models.
 
 ## Project Structure
-├FEA-Nonlinear-Prediction/
-├── LICENSE.md            
-├── README.md             
+FEA-Nonlinear-Prediction/
+├── README.md
 ├── data/
-│   └── data_training.csv 
+│   └── data_training_2.csv
 ├── notebooks/
-│   └── FEA_Nonlinear_Prediction.ipynb 
+│   └── FEA_Nonlinear_Prediction.ipynb
 ├── models/
-│   ├── random_forest.joblib  
-│   ├── xgboost.joblib       
-│   ├── scaler_X.joblib      
-│   └── scaler_y.joblib      
+│   ├── random_forest.joblib
+│   ├── xgboost.joblib (if available)
+│   ├── scaler_X.joblib
+│   └── scaler_y.joblib
 ├── streamlit_app/
-│   ├── app.py             
-│   └── requirements.txt   
-├── requirements.txt      
-└── .gitignore            
+│   ├── app.py
+│   └── requirements.txt
+├── requirements.txt
+├── LICENSE
+└── .gitignore        
 
 ## Setup and Installation
 
