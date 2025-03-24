@@ -1,10 +1,14 @@
+## Authors
+
+-   Copyright (c) 2025 Nahbruhh - Nguyen Manh Tuan (https://github.com/Nahbruhh)
+
 # FEA Nonlinear Prediction Using Machine Learning
 
-This project uses machine learning to predict nonlinear Finite Element Analysis (FEA) results (stress and strain) based on linear FEA outputs. This approach aims to provide faster and more cost-effective predictions compared to traditional nonlinear FEA simulations.
+This project uses machine learning to predict nonlinear FEA results (stress and strain) based on linear FEA outputs. This approach aims to provide faster and more cost-effective predictions compared to traditional nonlinear FEA simulations.
 
 ## Project Description
 
-The goal is to develop a machine learning model that accurately predicts nonlinear FEA outputs (stress and strain) using linear FEA outputs as input features.
+The goal is to develop a machine learning model that accurately predicts nonlinear FEA outputs using linear FEA outputs as input features.
 
 **Input Features (X):**
 
@@ -25,7 +29,7 @@ The goal is to develop a machine learning model that accurately predicts nonline
 **Pros:**
 
 - **Faster Predictions:** ML models can significantly reduce prediction time compared to nonlinear FEA simulations.
-- **Cost-Effective:** Reduces the computational resources required for complex analyses.
+- **Cost-Effective:** Reduces the computational resources.
 - **Generalizable:** Well-trained models can be applied to similar materials and geometries.
 
 **Cons:**
@@ -36,7 +40,7 @@ The goal is to develop a machine learning model that accurately predicts nonline
 
 ## Difficulty
 
-Moderate to High. Requires domain knowledge and careful data handling.
+
 
 ## Modeling Approach
 
@@ -111,15 +115,12 @@ FEA-Nonlinear-Prediction/
 
 ## Notebook Steps
 
-1.  **Load the Data:** Load the dataset using pandas.
-2.  **Preprocessing:** Scale features and labels, split data into train and test sets.
-3.  **Data Visualization:** Visualize correlations, scatter plots, and distributions.
-4.  **Hyperparameter Definition for Model Selection:** Define hyperparameter search spaces.
-5.  **Model Selection:** Train and evaluate Random Forest and XGBoost.
-6.  **Model Evaluation and Refinement:** Evaluate models, inverse transform predictions, and visualize residuals.
-7.  **Evaluate Results:** Summarize and compare model performance.
-8.  **Save Models:** Save trained models and scalers.
-9.  **Deploy UI via Streamlit:** Create an interactive web app.
+1.  **Data Loading:** Loading the dataset containing linear and nonlinear FEA results.
+2.  **Data Preprocessing:** Scaling and splitting the data for training and testing.
+3.  **Exploratory Data Analysis (EDA):** Visualizing data distributions and correlations.
+4.  **Model Selection, Training and Saving:** Choosing, training regression models (Random Forest, XGBoost). And saving the trained models and scalers for deployment.
+5.  **Model Evaluation:** Assessing the performance of the trained models.
+6.  **Deploy UI via Streamlit:** Create an interactive web app.
 
 ## Dependencies
 
@@ -140,9 +141,6 @@ FEA-Nonlinear-Prediction/
 
 Contributions are welcome! Please feel free to submit pull requests or open issues.
 
-## Authors
-
--   Copyright (c) 2025 Nahbruhh - Nguyen Manh Tuan (https://github.com/Nahbruhh)
 
 ## License
 
