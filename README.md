@@ -46,7 +46,7 @@ Supervised learning using regression models.
 EA-Nonlinear-Prediction/
 ├── README.md             
 ├── data/
-│   └── data_training_2.csv 
+│   └── data_training.csv 
 ├── notebooks/
 │   └── FEA_Nonlinear_Prediction.ipynb 
 ├── models/
@@ -100,7 +100,7 @@ EA-Nonlinear-Prediction/
 
 ## Files
 
--   **`data/data_training_2.csv`:** The dataset containing linear and nonlinear FEA results.
+-   **`data/data_training.csv`:** The dataset containing linear and nonlinear FEA results.
 -   **`notebooks/FEA_Nonlinear_Prediction.ipynb`:** Jupyter Notebook with data loading, preprocessing, modeling, and evaluation.
 -   **`models/`:** Directory containing saved models and scalers.
 -   **`streamlit_app/app.py`:** Streamlit application for interactive predictions.
