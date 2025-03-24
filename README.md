@@ -43,7 +43,8 @@ Moderate to High. Requires domain knowledge and careful data handling.
 Supervised learning using regression models.
 
 ## Project Structure
-EA-Nonlinear-Prediction/
+FEA-Nonlinear-Prediction/
+├── LICENSE.md            
 ├── README.md             
 ├── data/
 │   └── data_training.csv 
@@ -67,7 +68,7 @@ EA-Nonlinear-Prediction/
 1.  **Clone the repository:**
 
     ```bash
-    git clone [repository_url]
+    git clone https://github.com/Nahbruhh/FEA-Nonlinear-Prediction.git
     cd FEA-Nonlinear-Prediction
     ```
 
