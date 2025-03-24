@@ -59,9 +59,8 @@ FEA-Nonlinear-Prediction/
 │   └── requirements.txt
 ├── requirements.txt
 ├── LICENSE
-└── .gitignore        
+└── .gitignore 
 
-## Setup and Installation
 
 ## Setup and Installation
 
