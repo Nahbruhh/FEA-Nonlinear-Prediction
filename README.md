@@ -47,7 +47,7 @@ Supervised learning using regression models.
 FEA-Nonlinear-Prediction/
 ├── README.md
 ├── data/
-│   └── data_training_2.csv
+│   └── data_training.csv
 ├── notebooks/
 │   └── FEA_Nonlinear_Prediction.ipynb
 ├── models/
