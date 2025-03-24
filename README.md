@@ -43,6 +43,7 @@ Moderate to High. Requires domain knowledge and careful data handling.
 Supervised learning using regression models.
 
 ## Project Structure
+```
 FEA-Nonlinear-Prediction/
 ├── README.md
 ├── data/
@@ -60,6 +61,7 @@ FEA-Nonlinear-Prediction/
 ├── requirements.txt
 ├── LICENSE
 └── .gitignore 
+```
 
 
 ## Setup and Installation
