@@ -35,8 +35,27 @@ xgb_scaler_y = joblib.load(os.path.join(base_dir,'scaler_y_xgb.joblib'))
 
 st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", layout="wide")
 st.title('Nonlinear FEA Prediction App')
+st.divider()
 
 
+with st.expander("About This App"):
+    st.markdown("""
+    **Author**: Copyright (c) 2025 **Nguyen Manh Tuan** [<https://github.com/Nahbruhh>](https://github.com/Nahbruhh)  
+    
+    **Objective**: Predict nonlinear stress/strain results from linear analysis.  
+    
+    **Key Features**:  
+    > - Uses machine learning to approximate complex material behavior.  
+    > - Trained on FEA datasets to generate rapid predictions for nonlinear effects.  
+    > - Reduces reliance on full nonlinear simulations, saving computation time.  
+    
+    **Limitations**:  
+    > - Currently case-specific – the model works well for trained scenarios but lacks generalization.  
+    > - Scalability depends on data – with a diverse dataset, it can be extended to broader cases.  
+    
+    **Tech Used**: Python, scikit-learn, ANSYS simulation data.
+    """, unsafe_allow_html=True)
+st.divider()
 
 
 

@@ -56,7 +56,7 @@ FEA-Nonlinear-Prediction/
 │   └── FEA_Nonlinear_Prediction.ipynb
 ├── models/
 │   ├── random_forest.joblib
-│   ├── xgboost.joblib (if available)
+│   ├── xgboost.joblib 
 │   ├── scaler_X.joblib
 │   └── scaler_y.joblib
 ├── streamlit_app/
@@ -67,42 +67,6 @@ FEA-Nonlinear-Prediction/
 └── .gitignore 
 ```
 
-
-## Setup and Installation
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/Nahbruhh/FEA-Nonlinear-Prediction.git
-    cd FEA-Nonlinear-Prediction
-    ```
-
-2.  **Create a virtual environment (recommended):**
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On macOS/Linux
-    venv\Scripts\activate     # On Windows
-    ```
-
-3.  **Install dependencies:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Run the Jupyter Notebook:**
-
-    ```bash
-    jupyter notebook notebooks/FEA_Nonlinear_Prediction.ipynb
-    ```
-
-5.  **Run the Streamlit application:**
-
-    ```bash
-    cd streamlit_app
-    streamlit run app.py
-    ```
 
 ## Files
 
@@ -128,7 +92,7 @@ FEA-Nonlinear-Prediction/
 -   scikit-learn
 -   matplotlib
 -   seaborn
--   xgboost (optional)
+-   xgboost 
 -   joblib
 -   streamlit
 
