@@ -52,6 +52,7 @@ with st.expander("About This App"):
     **Limitations**:  
     > - Currently case-specific – the model works well for trained scenarios but lacks generalization.  
     > - Scalability depends on data – with a diverse dataset, it can be extended to broader cases.  
+    > - Limited to few specific steel materials at this time; will be upgraded with a larger dataset for broader training.
     
     **Tech Used**: Python, scikit-learn, ANSYS simulation data.
     """, unsafe_allow_html=True)
