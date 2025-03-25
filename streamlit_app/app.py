@@ -43,7 +43,7 @@ with st.expander("About This App"):
     **Author**: Copyright (c) 2025 **Nguyen Manh Tuan** [<https://github.com/Nahbruhh>](https://github.com/Nahbruhh)  
     
     **Objective**: Predict nonlinear stress/strain results from linear analysis.  
-    > Used for demonstration purposes only.
+    > - Used for demonstration purposes only.
     
     **Key Features**:  
     > - Uses machine learning to approximate complex material behavior.  
