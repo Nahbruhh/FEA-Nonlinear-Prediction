@@ -17,14 +17,20 @@ import os
 # else:
 #     print(f"File {model_path} is not readable.")
 
+# Use the file uploader widget to upload the model
+uploaded_model = st.file_uploader("Upload your model", type="joblib")
 
-rf_model = joblib.load('best_rf_model.joblib')
-rf_scaler_X = joblib.load('scaler_X_rf.joblib')
-rf_scaler_y = joblib.load('scaler_y_rf.joblib')
+if uploaded_model is not None:
+    rf_model = joblib.load(uploaded_model)
+    st.write("Model loaded successfully!")
 
-xgb_model = joblib.load('best_xgb_model.joblib')
-xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
-xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
+# rf_model = joblib.load('best_rf_model.joblib')
+# rf_scaler_X = joblib.load('scaler_X_rf.joblib')
+# rf_scaler_y = joblib.load('scaler_y_rf.joblib')
+
+# xgb_model = joblib.load('best_xgb_model.joblib')
+# xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
+# xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
 
 st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", layout="wide")
 st.title('Nonlinear FEA Prediction App')
