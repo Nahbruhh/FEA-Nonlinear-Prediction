@@ -11,6 +11,8 @@ print("Files in the current directory:", os.listdir())
 print("Loading model from:", os.path.abspath('../models/best_rf_model.joblib'))
 print("Loading scaler_X from:", os.path.abspath('../models/scaler_X_rf.joblib'))
 print("Loading scaler_y from:", os.path.abspath('../models/scaler_y_rf.joblib'))
+model_path = '../models/best_rf_model.joblib'
+print(f"File permissions for {model_path}: {os.stat(model_path)}")
 
 
 rf_model = joblib.load('../models/best_rf_model.joblib')
