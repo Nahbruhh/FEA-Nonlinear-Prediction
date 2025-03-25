@@ -5,26 +5,26 @@ import numpy as np
 from datetime import datetime
 import os
 
-#deploying debug
-print("Current Working Directory:", os.getcwd())
-print("Files in the current directory:", os.listdir())
-print("Loading model from:", os.path.abspath('../models/best_rf_model.joblib'))
-print("Loading scaler_X from:", os.path.abspath('../models/scaler_X_rf.joblib'))
-print("Loading scaler_y from:", os.path.abspath('../models/scaler_y_rf.joblib'))
-model_path = '../models/best_rf_model.joblib'
-if os.access(model_path, os.R_OK):
-    print(f"File {model_path} is readable.")
-else:
-    print(f"File {model_path} is not readable.")
+# #deploying debug
+# print("Current Working Directory:", os.getcwd())
+# print("Files in the current directory:", os.listdir())
+# print("Loading model from:", os.path.abspath('../models/best_rf_model.joblib'))
+# print("Loading scaler_X from:", os.path.abspath('../models/scaler_X_rf.joblib'))
+# print("Loading scaler_y from:", os.path.abspath('../models/scaler_y_rf.joblib'))
+# model_path = '../models/best_rf_model.joblib'
+# if os.access(model_path, os.R_OK):
+#     print(f"File {model_path} is readable.")
+# else:
+#     print(f"File {model_path} is not readable.")
 
 
-rf_model = joblib.load('../models/best_rf_model.joblib')
-rf_scaler_X = joblib.load('../models/scaler_X_rf.joblib')
-rf_scaler_y = joblib.load('../models/scaler_y_rf.joblib')
+rf_model = joblib.load('best_rf_model.joblib')
+rf_scaler_X = joblib.load('scaler_X_rf.joblib')
+rf_scaler_y = joblib.load('scaler_y_rf.joblib')
 
-xgb_model = joblib.load('../models/best_xgb_model.joblib')
-xgb_scaler_X = joblib.load('../models/scaler_X_xgb.joblib')
-xgb_scaler_y = joblib.load('../models/scaler_y_xgb.joblib')
+xgb_model = joblib.load('best_xgb_model.joblib')
+xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
+xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
 
 st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", layout="wide")
 st.title('Nonlinear FEA Prediction App')
