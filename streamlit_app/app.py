@@ -114,8 +114,8 @@ with col2:
             st.subheader('Predicted Nonlinear Results:')
             st.write(f"Nonlinear VM Stress = {prediction[0, 0]:.6f} MPa")
             st.write(f"Nonlinear MaxP Stress = {prediction[0, 1]:.6f} MPa")
-            st.write(f"Nonlinear Total Strain = {prediction[0, 2]:.6f} mm/mm")
-            st.write(f"Nonlinear Plastic Strain = {prediction[0, 3]:.6f} mm/mm")
+            st.write(f"Nonlinear Total Strain = {prediction[0, 3]:.6f} mm/mm")
+            st.write(f"Nonlinear Plastic Strain = {prediction[0, 2]:.6f} mm/mm")
             st.write(f"Nonlinear Elastic Strain = {prediction[0, 4]:.6f} mm/mm")
 
             # Add to history log with timestamp (keep max 10 entries)
