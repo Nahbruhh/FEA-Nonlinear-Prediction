@@ -73,7 +73,12 @@ dataset = pd.DataFrame({
 with st.expander("Dataset Overview"):
     st.markdown("**Sample Data** (subset of the FEA dataset):", unsafe_allow_html=True)
     formatted_dataset = dataset.round(10).astype(str).replace('0.0000000000', '0.0')
-    st.dataframe(formatted_dataset)
+    styled_dataset = formatted_dataset.style.set_table_styles(
+        [{'selector': 'th', 'props': [('white-space', 'normal'), ('word-wrap', 'break-word')]}]  # Wrapping header text
+    ).set_properties(
+        **{'max-width': '150px', 'text-align': 'center'}  # Adjust the max-width for columns and center-align text
+    )
+    st.table(styled_dataset)
 st.divider()
 
 
