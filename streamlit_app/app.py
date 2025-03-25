@@ -116,15 +116,31 @@ with col2:
             st.warning("Please select a model.")
             prediction = None
     
+        # if prediction is not None:
+        #     st.subheader('Predicted Nonlinear Results:')
+        #     st.write(f"Nonlinear VM Stress = {prediction[0, 0]:.6f} MPa")
+        #     st.write(f"Nonlinear MaxP Stress = {prediction[0, 1]:.6f} MPa")
+        #     st.write(f"Nonlinear Total Strain = {prediction[0, 3]:.6f} mm/mm")
+        #     st.write(f"Nonlinear Plastic Strain = {prediction[0, 2]:.6f} mm/mm")
+        #     st.write(f"Nonlinear Elastic Strain = {prediction[0, 4]:.6f} mm/mm")
+        # Prediction with table format
         if prediction is not None:
             st.subheader('Predicted Nonlinear Results:')
-            st.write(f"Nonlinear VM Stress = {prediction[0, 0]:.6f} MPa")
-            st.write(f"Nonlinear MaxP Stress = {prediction[0, 1]:.6f} MPa")
-            st.write(f"Nonlinear Total Strain = {prediction[0, 3]:.6f} mm/mm")
-            st.write(f"Nonlinear Plastic Strain = {prediction[0, 2]:.6f} mm/mm")
-            st.write(f"Nonlinear Elastic Strain = {prediction[0, 4]:.6f} mm/mm")
+            prediction_df = pd.DataFrame({"Nonlinear von Mises Stress (σ, MPa)": [prediction[0, 0]],
+                                        "Nonlinear Max Principal Stress (σ, MPa)": [prediction[0, 1]],
+                                        "Nonlinear Total Strain (ε, mm/mm)": [prediction[0, 3]],
+                                        "Nonlinear Plastic Strain (ε, mm/mm)": [prediction[0, 2]],
+                                        "Nonlinear Elastic Strain (ε, mm/mm)": [prediction[0, 4]]
+                                        })
+            formatted_prediction_df = prediction_df.round(8).astype(str).replace('0.0000000000', '0.0')
+            styled_formatted_prediction_df = formatted_prediction_df.style.set_table_styles(
+                [{'selector': 'th', 'props': [('white-space', 'normal'), ('word-wrap', 'break-word')]}]  
+                ).set_properties(
+                **{'max-width': '150px', 'text-align': 'center'}  
+                )
+            st.table(styled_formatted_prediction_df)
 
-            # Add to history log with timestamp (keep max 10 entries)
+            # Add to history log with timestamp 
             timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             log_entry = {'timestamp': timestamp,
                         'model': model_choice,
