@@ -157,8 +157,8 @@ with col1:
                 'Input_Equiv_Strain': entry['inputs'][2],
                 'Output_Nonlinear_VM_Stress': entry['outputs'][0],
                 'Output_Nonlinear_MaxP_Stress': entry['outputs'][1],
-                'Output_Nonlinear_Total_Strain': entry['outputs'][2],
-                'Output_Nonlinear_Plastic_Strain': entry['outputs'][3],
+                'Output_Nonlinear_Total_Strain': entry['outputs'][3],
+                'Output_Nonlinear_Plastic_Strain': entry['outputs'][2],
                 'Output_Nonlinear_Elastic_Strain': entry['outputs'][4]
             } for entry in st.session_state.history_log
         ]).to_csv(index=False),
@@ -174,8 +174,8 @@ if st.session_state.history_log:
         st.write(f"Outputs:")
         st.write(f"Nonlinear VM Stress = {entry['outputs'][0]:.6f} MPa")
         st.write(f"Nonlinear MaxP Stress = {entry['outputs'][1]:.6f} MPa")
-        st.write(f"Nonlinear Total Strain = {entry['outputs'][2]:.6f} mm/mm")
-        st.write(f"Nonlinear Plastic Strain = {entry['outputs'][3]:.6f} mm/mm")
+        st.write(f"Nonlinear Total Strain = {entry['outputs'][3]:.6f} mm/mm")
+        st.write(f"Nonlinear Plastic Strain = {entry['outputs'][2]:.6f} mm/mm")
         st.write(f"Nonlinear Elastic Strain = {entry['outputs'][4]:.6f} mm/mm")
 
 else:
