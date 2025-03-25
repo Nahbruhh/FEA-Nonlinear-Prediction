@@ -43,6 +43,7 @@ with st.expander("About This App"):
     **Author**: Copyright (c) 2025 **Nguyen Manh Tuan** [<https://github.com/Nahbruhh>](https://github.com/Nahbruhh)  
     
     **Objective**: Predict nonlinear stress/strain results from linear analysis.  
+    > Used for demonstration purposes only.
     
     **Key Features**:  
     > - Uses machine learning to approximate complex material behavior.  
@@ -53,9 +54,25 @@ with st.expander("About This App"):
     > - Currently case-specific – the model works well for trained scenarios but lacks generalization.  
     > - Scalability depends on data – with a diverse dataset, it can be extended to broader cases.  
     > - Limited to few specific steel materials at this time; will be upgraded with a larger dataset for broader training.
+    > - Right now, limited yield is 250.0 MPa.
     
     **Tech Used**: Python, scikit-learn, ANSYS simulation data.
     """, unsafe_allow_html=True)
+
+dataset = pd.DataFrame({
+    "Sigma_linear_VM": [340.1523409, 377.6361498, 315.78422996, 189.1191317, 168.9092521, 324.0507576, 176.7300265],
+    "Sigma_linear_MaxP": [376.1708725, 418.9411742, 346.9163822, 209.3657783, 185.9875863, 356.8389866, 195.4201101],
+    "Epsilon_linear_Equiv": [0.001700776, 0.0018888342, 0.001578922, 0.000945607, 0.000844547, 0.001620255, 0.000883657],
+    "Sigma_nonlinear_VM": [256.9695163, 250.2192236, 253.0039444, 189.0856522, 168.8918588, 250.3515208, 176.7046842],
+    "Sigma_nonlinear_MaxP": [289.4311823, 296.7278234, 284.9992443, 209.3166919, 185.9579268, 287.2069086, 195.3819725],
+    "Epsilon_nonlinear_Plastic": [0.000582405, 0.000913638, 0.000405511, 0, 0, 0.000474101, 0],
+    "Epsilon_nonlinear_Total": [0.001836659, 0.002170315, 0.001658473, 0.000945439, 0.00084446, 0.001727564, 0.00088353],
+    "Epsilon_nonlinear_Elastic": [0.001285278, 0.001256677, 0.001265851, 0.000945439, 0.00084446, 0.001253463, 0.00088353]
+})
+
+with st.expander("Dataset Overview"):
+    st.markdown("**Sample Data Used for Training** (subset of the FEA dataset):", unsafe_allow_html=True)
+    st.dataframe(dataset)
 st.divider()
 
 
