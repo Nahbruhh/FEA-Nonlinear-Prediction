@@ -37,6 +37,23 @@ st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", 
 st.title('Nonlinear FEA Prediction App')
 
 
+st.markdown("""
+    <style>
+    /* Predict button */
+    button[kind="primary"][aria-label="Predict"] {
+        width: 200px !important;
+    }
+    /* Clear History button */
+    button[kind="primary"][aria-label="Clear History"] {
+        width: 200px !important;
+    }
+    /* Download History Log button */
+    button[kind="secondary"][aria-label="Download History Log"] {
+        width: 250px !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 # 340.1523409	376.1708725	0.001700776
 if 'history_log' not in st.session_state:
@@ -54,7 +71,7 @@ with col1:
 
 
 with col2:
-    if st.button('Predict'):
+    if st.button('Predict',icon="🚀"):
         input_data = input_data = pd.DataFrame([[sigma_linear_vm, sigma_linear_maxp, epsilon_linear_equiv]],
                                                 columns=feature_names
                                                 )
@@ -95,9 +112,37 @@ with col2:
 
 
 st.subheader('History Log (Recent 10):')
-if st.button(f'Clear History'):
-    st.session_state.history_log.clear()
-    st.write("History log cleared.")
+col1,_, col2 = st.columns([1,0.5,3])
+with col1:
+    if st.button(f'Clear History',
+                icon="🗑️",
+                use_container_width=True,
+                help="Click to erase all the history log."):
+        st.session_state.history_log.clear()
+        st.write("History log cleared.")
+
+    st.download_button(
+        label="Download History Log",
+        icon="⬇️",
+        use_container_width=True,
+        help="Click to download the history log as a CSV file (up to 10 recent entries).",
+        data=pd.DataFrame([
+            {
+                'Timestamp': entry['timestamp'],
+                'Model': entry['model'],
+                'Input_VM_Stress': entry['inputs'][0],
+                'Input_MaxP_Stress': entry['inputs'][1],
+                'Input_Equiv_Strain': entry['inputs'][2],
+                'Output_Nonlinear_VM_Stress': entry['outputs'][0],
+                'Output_Nonlinear_MaxP_Stress': entry['outputs'][1],
+                'Output_Nonlinear_Total_Strain': entry['outputs'][2],
+                'Output_Nonlinear_Plastic_Strain': entry['outputs'][3],
+                'Output_Nonlinear_Elastic_Strain': entry['outputs'][4]
+            } for entry in st.session_state.history_log
+        ]).to_csv(index=False),
+        file_name='history_log.csv',
+        mime='text/csv'
+    )
 
 if st.session_state.history_log:
     for i, entry in enumerate(st.session_state.history_log[::-1],1):
