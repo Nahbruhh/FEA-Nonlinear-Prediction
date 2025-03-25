@@ -20,10 +20,10 @@ import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Debug: Print to confirm
-print("Current directory:", os.getcwd())
-print("App directory:", base_dir)
-print("Files in app directory:", os.listdir(base_dir))
+
+print("Current dir:", os.getcwd())
+print("App dir:", base_dir)
+print("Files in app dir:", os.listdir(base_dir))
 
 rf_model = joblib.load(os.path.join(base_dir,'best_rf_model.joblib'))
 rf_scaler_X = joblib.load(os.path.join(base_dir,'scaler_X_rf.joblib'))
@@ -37,22 +37,7 @@ st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", 
 st.title('Nonlinear FEA Prediction App')
 
 
-st.markdown("""
-    <style>
-    /* Predict button */
-    button[kind="primary"][aria-label="Predict"] {
-        width: 200px !important;
-    }
-    /* Clear History button */
-    button[kind="primary"][aria-label="Clear History"] {
-        width: 200px !important;
-    }
-    /* Download History Log button */
-    button[kind="secondary"][aria-label="Download History Log"] {
-        width: 250px !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+
 
 
 # 340.1523409	376.1708725	0.001700776
