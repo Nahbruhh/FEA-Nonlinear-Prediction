@@ -3,6 +3,11 @@ import pandas as pd
 import joblib
 import numpy as np
 from datetime import datetime
+import os
+
+#deploying debug
+print("Current Working Directory:", os.getcwd())
+print("Files in the current directory:", os.listdir())
 
 rf_model = joblib.load('../models/best_rf_model.joblib')
 rf_scaler_X = joblib.load('../models/scaler_X_rf.joblib')
