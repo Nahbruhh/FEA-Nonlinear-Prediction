@@ -18,6 +18,8 @@ import os
 #     print(f"File {model_path} is not readable.")
 
 
+print("Current directory:", os.getcwd())
+print("Files in directory:", os.listdir(os.path.dirname(os.path.abspath(__file__))))
 
 rf_model = joblib.load('best_rf_model.joblib')
 rf_scaler_X = joblib.load('scaler_X_rf.joblib')
