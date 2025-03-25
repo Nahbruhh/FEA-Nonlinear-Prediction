@@ -18,26 +18,24 @@ import os
 #     print(f"File {model_path} is not readable.")
 
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Debug: Print to confirm
 print("Current directory:", os.getcwd())
-print("Files in directory:", os.listdir(os.path.dirname(os.path.abspath(__file__))))
+print("App directory:", base_dir)
+print("Files in app directory:", os.listdir(base_dir))
 
-rf_model = joblib.load('best_rf_model.joblib')
-rf_scaler_X = joblib.load('scaler_X_rf.joblib')
-rf_scaler_y = joblib.load('scaler_y_rf.joblib')
+rf_model = joblib.load(os.path.join(base_dir,'best_rf_model.joblib'))
+rf_scaler_X = joblib.load(os.path.join(base_dir,'scaler_X_rf.joblib'))
+rf_scaler_y = joblib.load(os.path.join(base_dir,'scaler_y_rf.joblib'))
 
-xgb_model = joblib.load('best_xgb_model.joblib')
-xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
-xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
+xgb_model = joblib.load(os.path.join(base_dir,'best_xgb_model.joblib'))
+xgb_scaler_X = joblib.load(os.path.join(base_dir,'scaler_X_xgb.joblib'))
+xgb_scaler_y = joblib.load(os.path.join(base_dir,'scaler_y_xgb.joblib'))
 
 st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", layout="wide")
 st.title('Nonlinear FEA Prediction App')
 
-# Use the file uploader widget to upload the model
-uploaded_model = st.file_uploader("Upload your model", type="joblib")
-
-if uploaded_model is not None:
-    rf_model = joblib.load(uploaded_model)
-    st.write("Model loaded successfully!")
 
 
 # 340.1523409	376.1708725	0.001700776
