@@ -19,13 +19,13 @@ import os
 
 
 
-# rf_model = joblib.load('best_rf_model.joblib')
-# rf_scaler_X = joblib.load('scaler_X_rf.joblib')
-# rf_scaler_y = joblib.load('scaler_y_rf.joblib')
+rf_model = joblib.load('best_rf_model.joblib')
+rf_scaler_X = joblib.load('scaler_X_rf.joblib')
+rf_scaler_y = joblib.load('scaler_y_rf.joblib')
 
-# xgb_model = joblib.load('best_xgb_model.joblib')
-# xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
-# xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
+xgb_model = joblib.load('best_xgb_model.joblib')
+xgb_scaler_X = joblib.load('scaler_X_xgb.joblib')
+xgb_scaler_y = joblib.load('scaler_y_xgb.joblib')
 
 st.set_page_config(page_title="Nonlinear FEA Prediction App", page_icon="🧬", layout="wide")
 st.title('Nonlinear FEA Prediction App')
