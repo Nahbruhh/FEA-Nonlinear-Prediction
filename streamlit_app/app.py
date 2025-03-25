@@ -19,11 +19,13 @@ import os
 
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
+models_dir = os.path.join(base_dir, '..', 'models')
+assets_dir = os.path.join(base_dir, '..', 'assets')
 
-
-print("Current dir:", os.getcwd())
-print("App dir:", base_dir)
-print("Files in app dir:", os.listdir(base_dir))
+# Debug
+# print("Current dir:", os.getcwd())
+# print("App dir:", base_dir)
+# print("Files in app dir:", os.listdir(base_dir))
 
 rf_model = joblib.load(os.path.join(base_dir,'best_rf_model.joblib'))
 rf_scaler_X = joblib.load(os.path.join(base_dir,'scaler_X_rf.joblib'))
@@ -49,15 +51,19 @@ with st.expander(" # About This App"):
     **Key Features**:  
     > - Uses machine learning to approximate complex material behavior.  
     > - Trained on FEA datasets to generate rapid predictions for nonlinear effects.  
-    > - Reduces reliance on full nonlinear simulations, saving computation time.  
+    > - Reduces reliance on full material nonlinear simulations, saving computation time.  
     
     **Limitations**:  
     > - Currently case-specific – the model works well for trained scenarios but lacks generalization.  
     > - Scalability depends on data – with a diverse dataset, it can be extended to broader cases.  
     > - Limited to few specific steel materials at this time; will be upgraded with a larger dataset for broader training.
-    > - Right now, limited to steel with yield is 250.0 MPa.
+    > - Right now, limited to steel with yield strength of 250.0 MPa.
     
-    **Tech Used**: Python, scikit-learn, ANSYS simulation data.
+    **Future Upgradings**:
+    > - **Generalized Model Upgrade**: Broader range of material families, additional material properties, and more loading types for more precise predictions.    
+    > - **Advanced Modeling Techniques**    
+    
+    **Tech Used**: Python, scikit-learn, Pytorch, ANSYS simulation data.
     """, unsafe_allow_html=True)
 
 dataset = pd.DataFrame({
@@ -80,6 +86,31 @@ with st.expander("## Dataset Overview"):
         **{'max-width': '150px', 'text-align': 'center'}  # Adjust the max-width for columns and center-align text
     )
     st.table(styled_dataset)
+
+
+# css = """
+#     /* Style the Streamlit expander using data-testid */
+#     div[data-testid="stExpander"] {
+#         background-color: white;  
+#         border-radius: 10px;  
+#         padding: 10px;
+#         font-size: 18px;  
+#     }
+
+# """
+# st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
+
+
+assets_dir = os.path.join(base_dir, '..', 'assets')
+benchmark_image_path = os.path.join(assets_dir, 'benchmark.png')
+with st.expander("## Benchmark Result"):
+    col1, col2 = st.columns([2,1])
+    with col1:
+        st.markdown("Here is the benchmark showcasing the results:")
+        
+        st.image(benchmark_image_path, caption="Benchmark Results")
+
 st.divider()
 
 
