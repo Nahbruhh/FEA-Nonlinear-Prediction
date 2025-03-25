@@ -72,7 +72,8 @@ dataset = pd.DataFrame({
 
 with st.expander("Dataset Overview"):
     st.markdown("**Sample Data Used for Training** (subset of the FEA dataset):", unsafe_allow_html=True)
-    st.dataframe(dataset)
+    formatted_dataset = dataset.round(10).astype(str).replace('0.0000000000', '0.0')
+    st.dataframe(formatted_dataset)
 st.divider()
 
 
